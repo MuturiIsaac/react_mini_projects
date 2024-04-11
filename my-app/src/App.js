@@ -1,15 +1,20 @@
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
-//import { useProSidebar } from "react-pro-sidebar";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import About from './About';
+import Projects from './Projects';
+import Posts from './Posts';
+import Newsletter from './Newsletter';
+import Home from './Home';
+
+
 
 const App = () => {
-  //const { collapseSidebar } = useProSidebar();
-
   return (
     <div style={{ display: "flex", height: "100vh", alignItems: "center" }}>
       <Sidebar
@@ -68,7 +73,7 @@ const App = () => {
               fontWeight: "bold",
             }}
           >
-            About
+            <Link to="/about">About</Link>
           </MenuItem>
           <MenuItem
             style={{
@@ -78,7 +83,7 @@ const App = () => {
               fontWeight: "bold",
             }}
           >
-            Projects
+            <Link to="/projects">Projects</Link>
           </MenuItem>
           <MenuItem
             style={{
@@ -88,7 +93,7 @@ const App = () => {
               fontWeight: "bold",
             }}
           >
-            Post
+            <Link to="/posts">Post</Link>
           </MenuItem>
           <MenuItem
             style={{
@@ -98,7 +103,7 @@ const App = () => {
               fontWeight: "bold",
             }}
           >
-            Newsletter
+            <Link to="/newsletter">Newsletter</Link>
           </MenuItem>
           <div
             style={{
@@ -126,27 +131,13 @@ const App = () => {
           </div>
         </Menu>
       </Sidebar>
-    
-     <div style={{ flex: 1, padding: "20px", textAlign: "center" }}>
-       <h1>Welcome to Master Chief's Website</h1>
-       <p>
-         I'm a passionate software engineer with a love for algorithms, data
-         structures, distributed systems, and software development. I share
-         content related to these topics through my blog, posts, and problem
-         solutions.
-       </p>
-       <p>
-         I hold a Ph.D. in computer vision, image processing, and machine
-         learning, and currently work as a Senior Software Engineer at Siemens
-         Healthineers. I love working with different technologies, developing
-         algorithms, and contributing to the design of complex software
-         systems, driven by a motivation for continuous learning.
-       </p>
-       <p>
-         I'm also actively involved in tech communities and newsletters,
-         sharing my knowledge and experiences with fellow enthusiasts.
-       </p>
-     </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/newsletter" element={<Newsletter />} />
+      </Routes>
     </div>
   );
 };

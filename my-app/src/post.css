@@ -1,0 +1,27 @@
+/* Post.css */
+.post-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .post-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post-title {
+    margin: 0 0 10px 0;
+  }
+  
+  .post-excerpt {
+    margin: 0 0 10px 0;
+  }
+  
+  .read-more-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
